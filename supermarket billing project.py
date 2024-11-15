@@ -11,8 +11,7 @@ def get_db_connection():
             user='root',
             password='sags@123',
             host='localhost',
-            database='essentialsmart'
-        )
+            database='essentialsmart')
         return con
     except mysql.connector.Error as err:
         print("Error: Could not connect to the database.", err)
@@ -123,7 +122,7 @@ def main():
             print("No products found.")
             continue
 
-        print("Here are the products with names containing", "'" + product_name + "':")
+        print("Here are the products with names containing", product_name, ":")
         for idx, (product_id, product_name, price, qty) in enumerate(products):
             print(idx + 1, "|", product_name, "| Rs.", "{:.2f}".format(price), "| Qty:", qty)
 
